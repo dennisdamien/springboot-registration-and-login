@@ -9,7 +9,7 @@ import java.util.Collection;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "tblUser",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 
 public class User {
 
