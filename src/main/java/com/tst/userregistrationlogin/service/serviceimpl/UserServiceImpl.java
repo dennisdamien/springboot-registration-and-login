@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -25,5 +26,10 @@ public class UserServiceImpl implements UserService {
                 Arrays.asList(new Role("ROLE_USER"))
                 );
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

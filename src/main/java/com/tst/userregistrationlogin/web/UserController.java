@@ -5,12 +5,10 @@ import com.tst.userregistrationlogin.service.UserService;
 import com.tst.userregistrationlogin.web.dto.RegistrationDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -30,9 +28,11 @@ public class UserController {
     }
 
     @PostMapping
-    public String userRegistration(@ModelAttribute ("user") RegistrationDto registrationDto, RedirectAttributes redirectAttribute){
+    public String userRegistration(@ModelAttribute("user") RegistrationDto registrationDto, RedirectAttributes redirectAttribute){
         userService.save(registrationDto);
         redirectAttribute.addFlashAttribute("success","success");
         return "redirect:/registration";
     }
+
+
 }
