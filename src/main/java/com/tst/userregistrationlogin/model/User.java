@@ -9,7 +9,7 @@ import java.util.Collection;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "tblUser",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 
 public class User {
 
@@ -35,4 +35,12 @@ public class User {
                      name="user_id",referencedColumnName = "id"
              ))
      private Collection<Role> roles;
+
+    public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }
